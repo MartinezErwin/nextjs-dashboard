@@ -38,15 +38,12 @@ export type State = {
 export async function createInvoice(prevState: State, formData: FormData) {
   const rawStatus = formData.get("status");
 
-  // Validación personalizada
-  if (!rawStatus) {
-    throw new Error("No escogiste ningún estado de pago.");
-  }
   const validatedFields = CreateInvoice.safeParse({
     customerId: formData.get("customerId"),
     amount: formData.get("amount"),
     status: formData.get("status"),
   });
+
   if (!validatedFields.success) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
@@ -74,6 +71,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
 }
+
 export async function updateInvoice(
   id: string,
   prevState: State,
@@ -108,6 +106,7 @@ export async function updateInvoice(
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
 }
+
 export async function deleteInvoice(id: string) {
   throw new Error("Failed to Delete Invoice");
 
