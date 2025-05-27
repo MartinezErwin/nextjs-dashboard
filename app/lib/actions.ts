@@ -24,10 +24,6 @@ const FormSchema = z.object({
   date: z.string(),
 });
 
-const UpdateInvoice = FormSchema.omit({ id: true, date: true });
-
-const CreateInvoice = FormSchema.omit({ id: true, date: true });
-
 export type State = {
   errors?: {
     customerId?: string[];
@@ -55,6 +51,7 @@ export async function authenticate(
     throw error;
   }
 }
+const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(prevState: State, formData: FormData) {
   const rawStatus = formData.get("status");
@@ -92,6 +89,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
   revalidatePath("/dashboard/invoices");
   redirect("/dashboard/invoices");
 }
+const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function updateInvoice(
   id: string,
@@ -129,8 +127,6 @@ export async function updateInvoice(
 }
 
 export async function deleteInvoice(id: string) {
-  throw new Error("Failed to Delete Invoice");
-
   await sql`DELETE FROM invoices WHERE id = ${id}`;
   revalidatePath("/dashboard/invoices");
 }
