@@ -1,7 +1,7 @@
 import { lusitana } from "@/app/ui/fonts";
 import MapsIframe from "@/app/ui/iFrames/MapsIframe";
 import SpotifyIframe from "@/app/ui/iFrames/SpotifyIframe";
-import YouTube from "@/app/ui/iFrames/YouTube";
+import YouTube from "@/app/ui/iFrames/YouTubeIframe";
 
 export default function Page() {
   return (
