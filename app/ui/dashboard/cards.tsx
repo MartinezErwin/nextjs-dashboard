@@ -40,10 +40,12 @@ export function Card({
   title,
   value,
   type,
+  children,
 }: {
   title: string;
   value: number | string;
   type: "invoices" | "customers" | "pending" | "collected";
+  children?: React.ReactNode;
 }) {
   const Icon = iconMap[type];
 
@@ -59,6 +61,7 @@ export function Card({
       >
         {value}
       </p>
+      {children}
     </div>
   );
 }
