@@ -3,16 +3,29 @@ import {
   ClockIcon,
   UserGroupIcon,
   InboxIcon,
+  PlayIcon,
+  MapIcon,
+  MusicalNoteIcon,
 } from "@heroicons/react/24/outline";
 import { fetchCardData } from "@/app/lib/data";
 
-import { lusitana } from "@/app/ui/fonts";
+type CardType =
+  | "invoices"
+  | "customers"
+  | "pending"
+  | "collected"
+  | "youtube"
+  | "maps"
+  | "spotify";
 
-const iconMap = {
+const iconMap: Record<CardType, React.ElementType> = {
   collected: BanknotesIcon,
   customers: UserGroupIcon,
   pending: ClockIcon,
   invoices: InboxIcon,
+  youtube: PlayIcon,
+  maps: MapIcon,
+  spotify: MusicalNoteIcon,
 };
 
 export default async function CardWrapper() {
@@ -38,19 +51,20 @@ export default async function CardWrapper() {
 
 export function Card({
   title,
-  value,
   type,
   children,
+  className,
 }: {
   title: string;
   value: number | string;
-  type: "invoices" | "customers" | "pending" | "collected";
+  type: CardType;
   children?: React.ReactNode;
+  className?: string;
 }) {
   const Icon = iconMap[type];
 
   return (
-    <div className="rounded-xl bg-gray-50 p-2 shadow-sm">
+    <div className={`rounded-xl bg-gray-50 p-2 shadow-sm ${className ?? ""}`}>
       <div className="flex p-4">
         {Icon ? <Icon className="h-5 w-5 text-gray-700" /> : null}
         <h3 className="ml-2 text-sm font-medium">{title}</h3>

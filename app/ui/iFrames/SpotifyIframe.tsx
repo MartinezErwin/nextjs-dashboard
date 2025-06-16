@@ -1,9 +1,9 @@
 import React from "react";
 import { Card } from "@/app/ui/dashboard/cards";
 
-const SpotifyIframe: React.FC = () => {
+export default function SpotifyIframe() {
   return (
-    <Card title="Spotify Álbum" value={""} type="invoices">
+    <Card title="Spotify Álbum" value={""} type="spotify">
       <div className="relative w-full h-[352px]">
         <iframe
           src="https://open.spotify.com/embed/album/7kuJ6wtlijDEk2A71qG2q6"
@@ -14,6 +14,4 @@ const SpotifyIframe: React.FC = () => {
       </div>
     </Card>
   );
-};
-
-export default SpotifyIframe;
+}

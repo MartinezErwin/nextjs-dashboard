@@ -1,9 +1,9 @@
 import React from "react";
 import { Card } from "@/app/ui/dashboard/cards";
 
-const YouTube: React.FC = () => {
+export default function YouTubeIframe() {
   return (
-    <Card title="YouTube Video" value={""} type="invoices">
+    <Card title="YouTube Video" value={""} type="youtube">
       <div className="relative w-full pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
         <iframe
           src="https://www.youtube.com/embed/dQw4w9WgXcQ"
@@ -15,6 +15,4 @@ const YouTube: React.FC = () => {
       </div>
     </Card>
   );
-};
-
-export default YouTube;
+}
