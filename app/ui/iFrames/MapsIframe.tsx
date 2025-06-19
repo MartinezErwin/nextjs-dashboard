@@ -1,4 +1,3 @@
-import React from "react";
 import { Card } from "@/app/ui/dashboard/cards";
 
 export default function MapsIframe() {
