@@ -19,7 +19,7 @@ const links = [
   },
   { name: "Customers", href: "/dashboard/customers", icon: UserGroupIcon },
   {
-    name: "Rick and Morty",
+    name: "APIs",
     href: "/dashboard/rickandmorty",
     icon: UserGroupIcon,
   },
