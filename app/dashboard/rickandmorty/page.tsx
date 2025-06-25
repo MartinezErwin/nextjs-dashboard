@@ -178,34 +178,32 @@ export default function RickAndMortyPage() {
           </Card>
         </div>
       </div>
-      <div className="mb-8">
-        <h2 className="mb-4 text-xl font-bold">Random User API</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <Card title="Name" value="" type="customers">
-            <div className="flex items-center justify-center h-32 text-2xl">
-              {user?.name}
-            </div>
-          </Card>
-          <Card title="Gender" value="" type="pending">
-            <div className="flex items-center justify-center h-32 text-2xl">
-              {user?.gender}
-            </div>
-          </Card>
-          <Card title="Email" value="" type="invoices">
-            <div className="flex items-center justify-center h-32 text-sm text-center">
-              {user?.email}
-            </div>
-          </Card>
-          <Card title="Picture" value="" type="collected">
-            <div className="flex items-center justify-center h-32">
-              <img
-                src={user?.picture}
-                alt={user?.name}
-                className="h-24 rounded-full"
-              />
-            </div>
-          </Card>
-        </div>
+      <h2 className="mb-4 text-xl font-bold">Random User API</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <Card title="Name" value="" type="customers">
+          <div className="flex items-center justify-center h-32 text-2xl">
+            {user?.name}
+          </div>
+        </Card>
+        <Card title="Gender" value="" type="pending">
+          <div className="flex items-center justify-center h-32 text-2xl">
+            {user?.gender}
+          </div>
+        </Card>
+        <Card title="Email" value="" type="invoices">
+          <div className="flex items-center justify-center h-32 text-sm text-center">
+            {user?.email}
+          </div>
+        </Card>
+        <Card title="Picture" value="" type="collected">
+          <div className="flex items-center justify-center h-32">
+            <img
+              src={user?.picture}
+              alt={user?.name}
+              className="h-24 rounded-full"
+            />
+          </div>
+        </Card>
       </div>
     </main>
   );
